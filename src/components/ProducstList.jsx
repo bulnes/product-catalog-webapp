@@ -31,11 +31,13 @@ export default function ProductsList({ category, orderBy }) {
         updateProducts(newsProducts)
         setLoading(false)
       })
+    // eslint-disable-next-line
   }, [isLoading])
 
   React.useEffect(() => {
     const orderProducts = orderProductsByPrice(products, orderBy)
     updateProducts(orderProducts, true)
+    // eslint-disable-next-line
   }, [orderBy])
 
   return (
