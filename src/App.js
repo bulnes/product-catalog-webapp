@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
 
-      <section className="container mx-auto grid grid-rows-2 grid-cols-1 gap-10 md:grid-rows-1 md:grid-cols-4 my-10">
+      <section className="container px-5 md:px-0 md:mx-auto flex flex-col items-center justify-center gap-10 md:items-start md:grid md:grid-rows-1 md:grid-cols-4 my-10">
         <Aside setCategory={setCategory} orderBy={orderBy} setOrderBy={setOrderBy} />
         <ProductsList category={category} orderBy={orderBy} />
       </section>

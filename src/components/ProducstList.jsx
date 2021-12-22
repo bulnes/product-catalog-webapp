@@ -45,13 +45,13 @@ export default function ProductsList({ category, orderBy }) {
         const key = Math.random()
 
         return (
-          <div key={key} className={`${(productCategory === category || category === '') ? '' : 'hidden invisible'}`}>
-            <div key={id} className="w-full h-48 lg:max-w-full lg:flex border border-gray-200 hover:shadow-xl">
+          <div key={key} data-js-card className={`${(productCategory === category || category === '') ? '' : 'hidden invisible'}`}>
+            <div key={id} className="w-full h-auto md:h-48 lg:max-w-full lg:flex border border-gray-200 hover:shadow-xl">
 
               <div className="h-48 m-1.5 lg:h-auto lg:w-48 flex-none bg-contain bg-no-repeat bg-center overflow-hidden" style={{ backgroundImage: `url('${image}')` }} title="Mountain">
               </div>
 
-              <div className="bg-white p-4 pl-8 flex flex-col justify-between leading-normal">
+              <div className="bg-white p-4 md:pl-8 flex flex-col justify-between leading-normal">
                 <p className="text-gray-900 text-opacity-60 text-base capitalize">{productCategory}</p>
 
                 <h2 className="text-gray-900 font-bold text-xl mb-2">{title}</h2>
@@ -63,7 +63,9 @@ export default function ProductsList({ category, orderBy }) {
         )
       })}
 
-      <p ref={lastProductElement}>Loading...</p>
+      <p ref={lastProductElement} className="flex flex-row items-center justify-center xl:col-span-2">
+        <span className="animate-spin h-5 w-5 mr-3 inline-block border border-blue-900 border-t-white rounded-full"></span> Loading...
+      </p>
     </main>
   )
 }

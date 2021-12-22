@@ -4,7 +4,7 @@ const categoriesApi = process.env.REACT_APP_ALL_CATEGORIES_API
 
 export default function Aside({ setCategory, orderBy, setOrderBy }) {
   const [categories, setCategories] = React.useState([])
-  const updateCategories = (newCategories) => setCategories([...categories, ...newCategories])
+  const updateCategories = (newCategories) => setCategories([...newCategories])
 
   React.useEffect(() => {
     fetch(categoriesApi)
@@ -27,15 +27,15 @@ export default function Aside({ setCategory, orderBy, setOrderBy }) {
   }
 
   return (
-    <aside>
-      <h4 className="text-2xl font-bold uppercase pb-1 mb-3 text-blue-900">Order by</h4>
+    <aside className="w-full">
+      <h4 className="text-xl md:text-2xl font-bold uppercase pb-1 mb-1 md:mb-3 text-blue-900">Order products by</h4>
 
-      <select className="form-select appearance-none block w-full px-3 py-1.5 mb-20 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Order by" defaultValue={orderBy} onChange={handleOrderBy}>
+      <select className="form-select appearance-none block w-full px-3 py-1.5 mb-10 md:mb-20 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Order by" defaultValue={orderBy} onChange={handleOrderBy}>
         <option value={'asc'}>Lowest price</option>
         <option value={'desc'}>Biggest price</option>
       </select>
 
-      <h4 className="text-2xl font-bold uppercase pb-1 mb-3 text-blue-900">Categories</h4>
+      <h4 className="text-xl md:text-2xl font-bold uppercase pb-1 mb-1 md:mb-3 text-blue-900">Categories</h4>
 
       <div>
         {categories.length > 0 && (
