@@ -19,8 +19,8 @@ Behavior requirements:
 * When a category is clicked, the list of products will be filtered by the selected category
 * When the page is scrolled until the end, the next 20 products will be loaded
 
-## Expectations
+## How to
 
-* Application running
-* Readme explaining how to run the application
-* Tests - good to have but not mandatory
+* You will need Node Lts and Yarn
+* First time, use ```yarn```
+* To up the server, use ```yarn start```
